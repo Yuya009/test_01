@@ -6,16 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+    <!-- コンテンツ表示画面 -->
+    <div>
+        <div>名前<input type="text" id="username"></div>
+        <div>
+            <!-- メッセージ入力欄 -->
+            <textarea id="text" rows="5"></textarea>
+            <!-- 送信ボタン -->
+            <button id="send">送信</button>
+        </div>
+        <!-- リスト表示 -->
+        <div id="output"></div>
+    </div>
 
 
 
 
 
-
-
-
-
+<!-- jquery読み込み -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
@@ -41,9 +51,17 @@
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
+  // MSG送受信準備 
+  let newPostRef = firebase.database().ref();
 
-
-
+  // 送信処理
+  $("#send").on("click",function(){
+        newPostRef.push({
+            username: $("#username").val(),
+            text: $("#text").val()
+        });
+        $("#text").val("");
+  });
 
 </script>
 </body>
