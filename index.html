@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Chatアプリ</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+    <!-- 保存されたデータが表示される箇所 -->
+  <div id="output" class="output_class"></div>
+
+  <!-- ブラウザの画面に見える内容 -->
+  <div class="send_area">
+    <div class="text_box">
+    <!-- テキストエリア -->
+      <textarea name="" id="text" rows="1" class="center text_area"></textarea>
+    </div>
+    <div class="send_div center">
+      <!-- 送信ボタン -->
+      <button id="send" class="send_btn">送信</button>
+    </div>　　
+  </div>
+  <div class="delete_area">
+    <button id="delete">全削除</button>　
+  </div>
+  <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+  <!-- JQuery -->
+
+  <!--** 以下Firebase **-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- firebaseのverが変わるので、数字がどんどん変化します🙋‍♀️ -->
+  <!-- ここにfirebaseのscriptを貼り付ける -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
